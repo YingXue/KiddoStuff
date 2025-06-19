@@ -1,7 +1,8 @@
 import React from 'react';
-import books from "../data/books";
+import { useBooksFromNotion } from "../hooks/useBooksFromNotion";
 
 export const BookPage = () => {
+    const { books, loading } = useBooksFromNotion();
     const allTags = Array.from(
         new Set(books.flatMap((book) => book.tags))
     );
@@ -15,7 +16,7 @@ export const BookPage = () => {
     };
 
     const toggleBook = (book) => {
-        if (book.status !== "可借") {
+        if (book.status !== "Available") {
             // alert(`这本书现在是 ${book.status} 状态，不能借哦！`);
             return;
         }
@@ -35,6 +36,10 @@ export const BookPage = () => {
     const mailBody = encodeURIComponent(
         selectedList.map((b) => `- ${b.title}`).join("\n")
     );
+
+    if (loading) {
+        return <div className="p-6">📦 书籍加载中...</div>;
+    }
 
     return (
         <div className="p-6 max-w-5xl mx-auto">
@@ -87,9 +92,9 @@ export const BookPage = () => {
                     </div>
                         <p className={`text-xs mt-2 font-medium inline-block px-2 py-0.5 rounded-full
                                 ${
-                                book.status === "可借"
+                                book.status === "Available"
                                     ? "bg-green-100 text-green-700"
-                                    : book.status === "已借出"
+                                    : book.status === "Lent"
                                     ? "bg-red-100 text-red-700"
                                     : "bg-yellow-100 text-yellow-800"
                                 }

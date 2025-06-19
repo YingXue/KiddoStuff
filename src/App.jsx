@@ -2,9 +2,9 @@
 import { HomePage } from './components/home'
 
 function App() {
-  return (
-    <HomePage/>
-  )
+    return (
+        <HomePage/>
+    )
 }
 
-export default App
+export default App;

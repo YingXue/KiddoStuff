@@ -37,4 +37,9 @@
 
 ```bash
 npm install
+cd Git\KiddoStuff\server
+
+node server.js
+cd Git\KiddoStuff\server
+npm install
 npm run dev
