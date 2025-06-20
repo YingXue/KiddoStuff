@@ -1,0 +1,8 @@
+{
+    "book_home_title": "I am Youqi, sharing every book I love to read ",
+    "book_home_greeting": "I have many books I have read, and some I am currently reading. If you like the books I have finished, you can come to my house to read them, or borrow them from me.",
+    "book_page_loading": "Loading book details...",
+    "book_page_label": "My little library",
+    "book_page_email": "Email me to borrow {{count}} book(s)",
+    "book_page_borrow": "Start by picking a few available books"
+}

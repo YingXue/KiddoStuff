@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useBooksFromNotion } from "../hooks/useBooksFromNotion";
 
 export const BookPage = () => {
+    const { t } = useTranslation();
+
     const { books, loading } = useBooksFromNotion();
     const allTags = Array.from(
         new Set(books.flatMap((book) => book.tags))
@@ -38,12 +41,12 @@ export const BookPage = () => {
     );
 
     if (loading) {
-        return <div className="p-6">📦 书籍加载中...</div>;
+        return <div className="p-6">📦 {t('book_page_loading')}</div>;
     }
 
     return (
         <div className="p-6 max-w-5xl mx-auto">
-            <h1 className="text-2xl font-bold mb-4">📚 小书库</h1>
+            <h1 className="text-2xl font-bold mb-4">📚 {t('book_page_label')}</h1>
 
             <div className="mb-4 flex flex-wrap gap-2">
                 {allTags.map((tag) => (
@@ -112,7 +115,7 @@ export const BookPage = () => {
                     ? `mailto:you@example.com?subject=我要借书&body=${mailBody}`
                     : undefined
             }
-                className={`fixed top-2 right-4 right-4 px-4 py-2 rounded-full shadow-lg transition-all
+                className={`fixed top-2 left-4 left-4 px-4 py-2 rounded-full shadow-lg transition-all
                     ${selectedBooks.length > 0 ? "bg-blue-600 text-white cursor-pointer" : "bg-gray-300 text-gray-600 cursor-default"}
                 `}
                 onClick={(e) => {
@@ -122,7 +125,7 @@ export const BookPage = () => {
                     }
                 }}
             >
-                {selectedBooks.length > 0 ? `📧 发邮件借 ${selectedBooks.length} 本书` : "📚 选几本可借的书吧"}
+                {selectedBooks.length > 0 ? `📧 ${t('book_page_email', {count: selectedBooks.length})}` : `📚 ${t('book_page_borrow')}`}
             </a>
         </div>
     );
