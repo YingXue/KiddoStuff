@@ -63,7 +63,7 @@ NOTION_DATABASE_ID=your_database_id
 ```
 # 启动后端服务
 cd server
-node index.js
+node .\server.js
 
 # 启动前端（在另一个终端）
 cd src

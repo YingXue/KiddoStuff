@@ -11,6 +11,7 @@ app.use(express.json());
 
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
+const PORT = process.env.PORT || 3001;
 
 app.post("/api/notion-books", async (req, res) => {
   try {
@@ -33,6 +34,6 @@ app.post("/api/notion-books", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log("✅ Notion proxy server running at http://localhost:3001");
+app.listen(PORT, () => {
+  console.log(`✅ Server running at http://localhost:${PORT}`);
 });
