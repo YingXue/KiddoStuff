@@ -4,5 +4,7 @@
     "book_page_loading": "正在加载书籍详情...",
     "book_page_label": "我的小书库",
     "book_page_email": "发邮件借 {{count}} 本书",
-    "book_page_borrow": "选几本可借的书吧"
+    "book_page_borrow": "选几本可借的书吧",
+    "book_page_pick": "你还没有选想借的书呢",
+    "book_page_book_status": "书本状态"
 }

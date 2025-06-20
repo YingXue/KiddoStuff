@@ -4,5 +4,7 @@
     "book_page_loading": "Loading book details...",
     "book_page_label": "My little library",
     "book_page_email": "Email me to borrow {{count}} book(s)",
-    "book_page_borrow": "Start by picking a few available books"
+    "book_page_borrow": "Start by picking a few available books",
+    "book_page_pick": "You haven't pick any books",
+    "book_page_book_status": "Book status"
 }
