@@ -69,8 +69,17 @@ node .\server.js
 cd src
 npm run dev
 ```
-前端默认运行在 http://localhost:5173，后端运行在 http://localhost:3000。
+前端默认运行在 http://localhost:5173，后端运行在 http://localhost:3000
 
+### 5. Deploy
+```
+# 后端部署
+修改完后端代码；
+Push 到 GitHub；
+Render 会自动重新部署（或者你手动 Deploy）；
+# 前端部署
+用npm run deploy部署到github io
+```
 🤝 致谢
 感谢 Notion 提供的 API 服务，感谢朋友们共同参与图书整理 ❤️
 

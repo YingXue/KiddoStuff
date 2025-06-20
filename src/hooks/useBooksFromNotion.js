@@ -8,7 +8,7 @@ export const useBooksFromNotion = () => {
         const apiBaseUrl =
         import.meta.env.MODE === "development"
             ? "http://localhost:3001"
-            : "https://kiddo-books-api.onrender.com";
+            : "https://kiddostuff.onrender.com";
         const fetchBooks = async () => {
             const res = await fetch(`${apiBaseUrl}/api/notion-books`, {
                 method: "POST",
