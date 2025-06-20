@@ -36,8 +36,10 @@ export const BookPage = () => {
 
     return (
         <div className="p-6 max-w-5xl mx-auto">
-            <h1 className="text-2xl font-bold mb-4">📚 {t('book_page_label')}</h1>
-
+            <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-bold">📚 {t('book_page_label', { count: filteredBooks.length })}</h1>
+                <Borrow selectedBooks={selectedBooks} books={books} />
+            </div>
             <Tags books={books} selectedTags={selectedTags} setSelectedTags={setSelectedTags}/>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -64,7 +66,7 @@ export const BookPage = () => {
                 ))}
             </div>
 
-            <Borrow selectedBooks={selectedBooks} books={books}/>
+
         </div>
     );
 }

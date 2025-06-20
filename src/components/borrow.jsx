@@ -15,7 +15,7 @@ export function Borrow({books, selectedBooks}) {
                     ? `mailto:kalian1127@gmail.com?subject=[Books] I want to borrow some books&body=${mailBody}`
                     : undefined
             }
-                className={`fixed top-2 left-4 left-4 px-4 py-2 rounded-full shadow-lg transition-all
+                className={`top-2 px-4 py-2 rounded-full shadow-sm transition-all
                     ${selectedBooks.length > 0 ? "bg-blue-600 text-white cursor-pointer" : "bg-gray-300 text-gray-600 cursor-default"}
                 `}
                 onClick={(e) => {
@@ -25,7 +25,7 @@ export function Borrow({books, selectedBooks}) {
                     }
                 }}
             >
-                {selectedBooks.length > 0 ? `📧 ${t('book_page_email', {count: selectedBooks.length})}` : `📚 ${t('book_page_borrow')}`}
+                {selectedBooks.length > 0 ? `📧 ${t('book_page_email', {count: selectedBooks.length})}` : `🛒 ${t('book_page_borrow')}`}
             </a>
     );
 }
